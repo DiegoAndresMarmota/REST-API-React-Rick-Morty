@@ -26,7 +26,22 @@ function App() {
   }, []);
 
   return (
-    <h1>Hello there</h1>
+    <div>
+      
+      <h1>Rick and Morty</h1>
+
+      {/*8.Voy a recorrer(map) cada elemento(personaje) de personajes, retornando sus datos en el div, siendo <h2> y <img>*/}
+      {personajes.map((personaje) => {
+        return (
+          /*9. Cada elemento(personaje) contenido en este div, esta asociado a una propiedad {id} o {name} o {image}*/ 
+          <div key={personaje.id}>
+            <h2>{personaje.name}</h2>
+            <img src={personaje.image} alt="personaje.nombre" />
+          </div>
+        );
+      })}
+
+    </div>
   );
 }
 
