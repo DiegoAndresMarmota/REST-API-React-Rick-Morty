@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import Personajes from "./Personajes";
 
+function NavegacionPagina() {
+  return (
+    <div className="d-flex align-items-center justify-content-between">
+      <p className="pt-2">Página Actual: 1</p>
+      <button className="btn btn-success btn-sm">Página Siguiente</button>
+    </div>
+  );
+}
+
 function ListaPersonajes() {
   /*6. Crear un useState */
   const [personajes, setPersonajes] = useState([]);
-
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
@@ -32,6 +40,9 @@ function ListaPersonajes() {
 
   return (
     <div className="container bg-white text-dark border-2">
+
+      <NavegacionPagina />
+
       {/*8.Voy a recorrer(map) cada elemento(personaje) de personajes, retornando sus datos en el div, siendo <h2> y <img>*/}
       {cargando ? (
         <h1>Loading...</h1>
