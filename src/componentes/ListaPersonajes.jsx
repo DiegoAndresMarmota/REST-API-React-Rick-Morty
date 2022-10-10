@@ -8,13 +8,14 @@ function Pagina({ pagina, setPagina }) {
       <button
         className="btn btn-success btn-sm"
         onClick={
-          () => { setPagina(pagina - 1) }
-        }>
-        Página: 
-        {/*{if(pagina==0){
-          setPagina(pagina)
-        } else{ }
-      */} {pagina - 1}
+          () => {
+            if (pagina > 1) {
+              setPagina(pagina - 1)
+            } else {
+              setPagina(pagina)
+            }
+          }}>
+        Página: {pagina - 1}
       </button>
       <p
         className="pt-2">
@@ -22,7 +23,8 @@ function Pagina({ pagina, setPagina }) {
       </p>
       <button
         className="btn btn-success btn-sm"
-        onClick={() => { setPagina(pagina + 1) }}>
+        onClick={
+          () => { setPagina(pagina + 1) }}>
         Página: {pagina + 1}
       </button>
     </div>
