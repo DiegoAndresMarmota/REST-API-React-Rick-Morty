@@ -5,6 +5,11 @@ function Pagina({ pagina, setPagina }) {
   return (
     <div
       className="d-flex align-items-center justify-content-between">
+      <button
+        className="btn btn-success btn-sm"
+        onClick={() => { setPagina(pagina + 1) }}>
+        Página: {pagina - 1}
+      </button>
       <p
         className="pt-2">
         Página Actual: {pagina}
@@ -70,6 +75,10 @@ function ListaPersonajes() {
           })}
         </div>
       )}
+      <Pagina
+        pagina={pagina}
+        setPagina={setPagina}
+      />
     </div>
   );
 }
